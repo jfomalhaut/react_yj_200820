@@ -1,16 +1,19 @@
 import React from "react";
-import { BroweserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Home from "./routers/home";
 import Main from "./routers/main";
+import Navigation from "./components/Navigations";
 
 const App = () => {
   return (
-    <BroweserRouter>
+    <BrowserRouter>
+      <Navigation />
       <Switch>
-        <Route path="/home" component={Home} />
+        <Route path="/home/:value" component={Home} exact />
         <Route path="/main" component={Main} />
+        <Redirect path="*" to="/home" />
       </Switch>
-    </BroweserRouter>
+    </BrowserRouter>
   );
 };
 
