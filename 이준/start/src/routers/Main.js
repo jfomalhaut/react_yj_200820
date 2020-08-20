@@ -1,8 +1,15 @@
 import React from 'react';
 
-const Main = () => {
+const Main = ({ history }) => {
+	const onHome = () => {
+		history.push('home/item_id');
+	};
+
 	return (
-		<h1>Main Component</h1>
+		<div>
+			<h1>Main Component</h1>
+			<button onClick={onHome}>Home으로</button>
+		</div>
 	);
 };
 
