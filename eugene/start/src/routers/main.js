@@ -1,13 +1,13 @@
 import React from "react";
 
-const Main = (props) => {
+const Main = ({ history }) => {
   const onHome = () => {
-    console.log(props);
-    props.history.push("home/item_id");
+    history.push("home/");
   };
+
   return (
     <div>
-      <h1> Main Component</h1>
+      <h1>Main Component</h1>
       <button onClick={onHome}>Home으로</button>
     </div>
   );
