@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./Home.css";
 
 const Home = ({ match }) => {
-  const title = "What";
-  const [data, setData] = useState(9);
+  const title = "HOME";
+  const [data, setData] = useState(10);
 
   const increase = () => {
     setData(data + 1);
@@ -14,17 +13,23 @@ const Home = ({ match }) => {
   };
 
   useEffect(() => {
+    // 처음 이 컴퍼넌트가 랜더링 될 때.
+    console.log(match.params.value);
+  }, [match.params.value]);
+
+  useEffect(() => {
     if (data % 5 === 0) {
-      console.log("5의 배수");
+      console.log("5의 배수입니다");
     }
   }, [data]);
 
   return (
     <div>
-      <h1> {title} Component</h1>
+      <h1>{title} Component</h1>
       <h1>{data}</h1>
-      <button onClick={increase}>increment</button>
-      <button onClick={decrease}>increment</button>
+      <h1>{match.params.value}</h1>
+      <button onClick={increase}>증가</button>
+      <button onClick={decrease}>감소</button>
     </div>
   );
 };
