@@ -20,7 +20,6 @@ const Home = () => {
   };
 
   const search = () => {
-    console.log("hell");
     const url = `${REQUEST_URL}?confmKey=${CONFIRM_KEY}&currentPage=${currentPage}&countPerPage=${VIEW}&resultType=json&keyword=${keyword2}`;
     Axios.get(url).then((res) => {
       const {
@@ -54,14 +53,6 @@ const Home = () => {
     }
   };
 
-  //   const pageNext = (e) => {
-  //     setCurrentPage(currentPage + 1);
-  //   };
-
-  //   const pagePre = (e) => {
-  //     setCurrentPage(currentPage - 1);
-  //   };
-
   return (
     <div className="container">
       <input value={keyword} onChange={onChangeKeyword} onKeyPress={onEnter} />
@@ -82,10 +73,14 @@ const Home = () => {
           </div>
         ))}
         {currentPage !== 1 ? (
-          <button onClick={setCurrentPage(currentPage - 1)}>이전페이지</button>
+          <button onClick={() => setCurrentPage(currentPage - 1)}>
+            이전페이지
+          </button>
         ) : null}
         {total > VIEW * currentPage ? (
-          <button onClick={setCurrentPage(currentPage + 1)}>다음페이지</button>
+          <button onClick={() => setCurrentPage(currentPage + 1)}>
+            다음페이지
+          </button>
         ) : null}
       </div>
     </div>
