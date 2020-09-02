@@ -1,5 +1,5 @@
 {
-  "name": "addr",
+  "name": "input",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -28,8 +28,6 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "axios": "^0.20.0",
-    "dotenv-webpack": "^2.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0"

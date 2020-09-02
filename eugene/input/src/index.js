@@ -1,5 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Input from "./routers/input";
+import InputForm from "./routers/InputForm";
 
-ReactDOM.render(<Input />, document.getElementById("root"));
+ReactDOM.render(
+  <div>
+    <InputForm />
+  </div>,
+  document.getElementById("root")
+);
