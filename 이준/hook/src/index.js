@@ -1,4 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Input from './routers/Input';
 
-ReactDOM.render(<h1>Hello, React!</h1>, document.getElementById('root'));
+ReactDOM.render(<Input />, document.getElementById('root'));

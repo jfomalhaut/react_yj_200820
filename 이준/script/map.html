@@ -1,0 +1,36 @@
+<html>
+<body>
+	<script>
+		var numbers = [1, 2, 3, 4, 5, 6, 7];
+		var newNumbers = numbers.map(item => {
+			if (item === 3) {
+				return item * 20;
+			} else {
+				return item;
+			}
+		});
+
+		var arr = [
+			{id: 1, name: 'name1', check: true},
+			{id: 2, name: 'name2', check: true},
+			{id: 3, name: 'name3', check: true},
+			{id: 4, name: 'name4', check: true},
+			{id: 5, name: 'name5', check: true}
+		];
+
+		var newArr = arr.map(item => {
+			if (item.id === 3) {
+				return ({ ...item, check: false });
+			} else {
+				return item;
+			}
+		});
+
+		var newArr2 = arr.map(item => 
+			item.id === 3 ? ({ ...item, check: false }) : item
+		);
+
+		console.log(newArr2);
+	</script>
+</body>
+</html>
