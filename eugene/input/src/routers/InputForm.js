@@ -20,6 +20,9 @@ const InputForm = ({ onInsert }) => {
   const onSubmit = useCallback(
     (e) => {
       onInsert(name, age, tel);
+      setTel("");
+      setName("");
+      setAge("");
       e.preventDefault();
       console.log("success");
     },
