@@ -1,17 +1,18 @@
-import React from "react";
-
 const intialState = {
   count: 0,
+  text: "",
 };
 
-const reducer = (state = intialState, action) => {
-  switch (action.type) {
+const reducer = (state = intialState, { type, value }) => {
+  switch (type) {
     case "INCREASE": {
-      state.count = state.count + 1;
-      return state;
+      return { count: state.count + 1 };
     }
-    case "DEACREASE": {
-      state.count = state.count - 1;
+    case "DECREASE": {
+      return { count: state.count - 1 };
+    }
+    case "SUBMIT_TEXT": {
+      return { text: value };
     }
     default: {
       return state;
