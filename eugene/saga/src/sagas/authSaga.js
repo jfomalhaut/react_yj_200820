@@ -1,8 +1,8 @@
+import axios from "axios";
 import { call, put, takeEvery } from "redux-saga/effects";
 import { Auth } from "../actions";
-import axios from "axios";
 
-const URL = "http://fomalhaut.shop/api/SP_getItem";
+const URL = "https://jsonplaceholder.typicode.com/users";
 
 function* fetchAuthSaga(action) {
   try {
