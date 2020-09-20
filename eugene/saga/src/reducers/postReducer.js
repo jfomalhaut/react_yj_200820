@@ -18,8 +18,7 @@ const postReducer = (state = initialState, action) => {
         data: action.data,
       };
     case Post.REMOVE_POST:
-      return state.filter((item) => item.id !== action.id);
-
+      return { data: state.data.filter((item) => item.id !== action.id) };
     default:
       return state;
   }

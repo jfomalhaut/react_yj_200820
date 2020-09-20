@@ -1,7 +1,7 @@
 import { Auth } from "../actions";
 
 const initialState = {
-  data: {},
+  data: [],
 };
 
 const authReducer = (state = initialState, action) => {
