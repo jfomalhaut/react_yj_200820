@@ -9,7 +9,7 @@ const store = createStore(Reducer);
 
 reactDOM.render(
   <Provider store={store}>
-    <App />,
+    <App />
   </Provider>,
   document.getElementById("root")
 );
