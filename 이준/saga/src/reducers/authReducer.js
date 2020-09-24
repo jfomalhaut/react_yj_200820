@@ -1,31 +1,46 @@
 import { Auth } from '../actions';
 
 const initialState = {
-	data: {}
+	auth: {}, // 접속한 사람의 정보
+	logged: false, // 로그인 유무
+	failure: 0 // 로그인 실패 횟수
 };
 
 const authReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case  Auth.LOGIN: {
-			console.log(action);
 			return {
 				...state,
 				payload: action.payload
 			};
 		}
 		case Auth.LOGIN_SUCCESS: {
-			console.log(action);
+			const failure = action.valid ? state.failure : state.failure + 1;
 			return {
 				...state,
-				data: action.data
+				logged: action.valid,
+				failure
 			};
 		}
 		case Auth.LOGIN_FAIL: {
-			console.log(action);
 			return {
 				...state,
 				error: action.error
 			};
+		}
+		case Auth.SESSION_LOGIN: {
+			return {
+				...state,
+				logged: true
+			}
+		}
+		case Auth.LOGOUT: {
+			return {
+				...state,
+				logged: false,
+				failure: 0,
+				auth: {}
+			}
 		}
 		default: return state;
 	}

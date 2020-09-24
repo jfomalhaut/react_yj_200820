@@ -1,9 +1,8 @@
 
-	1. 초기 세팅
-	2. 라우터 및 네비게이션
-	3. API 이용 (Axios)
-	4. 배열의 가공 (리스트 출력 및 수정, 추가, 삭제)
-
+1. 초기 세팅
+2. 라우터 및 네비게이션
+3. API 이용 (Axios)
+4. 배열의 가공 (리스트 출력 및 수정, 추가, 삭제)
 5. custom hook, input태그 useInput 만들기
 6. Redux 사용해보기 (예제: 장바구니)
 7. useReducer, useContext의 이해

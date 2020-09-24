@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
+import Item from '../components/Item';
 const CONFIRM_KEY = process.env.CONFIRM_KEY;
 const REQUEST_URL = "http://www.juso.go.kr/addrlink/addrLinkApi.do";
 const VIEW = 10;
@@ -59,10 +60,7 @@ const Home = () => {
 			</>
 			<div className="list" style={{width: '600px'}}>
 				{list.map((item, index) => (
-					<div className="row" style={{padding: '10px', borderBottom: '1px solid #ddd'}} key={`ADDR${index}`}>
-						<div>[도로명] {item.roadAddrPart1}</div>
-						<div>[지번] {item.jibunAddr}</div>
-					</div>
+					<Item item={item} index={index} />
 				))}
 			</div>
 
